@@ -62,25 +62,23 @@ def get_anticontent(search_key, cookie_dict, user_agent):
     with open('get_anticontent.js', encoding='utf-8') as f:
         js = f.read()
     ctx = execjs.compile(js)
-    # 提取cookie中的_nano_fp
-    _nano_fp = cookie_dict['_nano_fp']
-    # 处理cookie_dict, 转为cookie_arr
-    cookie_arr = [' _nano_fp=' + cookie_dict['_nano_fp']]
 
-    # for key, value in cookie_dict.items():
-    #     cookie_arr.append(' ' + key + '=' + value)
+    scrollTop_timestamp = next(next_scrollTop_timestamp)
+
     print('传入js的参数', 'search_key:', search_key)
-    print('传入js的参数', 'cookie_arr:', cookie_arr)
-    print('传入js的参数', 'user_agent:', user_agent)
-    print('传入js的参数', '_nano_fp:', _nano_fp)
     print('传入js的参数', 'P:', P)
     print('传入js的参数', 'F:', F)
-    scrollTop_timestamp = next(next_scrollTop_timestamp)
     print('传入js的参数', 'scrollTop_timestamp:', scrollTop_timestamp)
+    print('传入js的参数', 'user_agent:', user_agent)
+    print('传入js的参数', '_nano_fp:', cookie_dict['_nano_fp'])
 
     anti_content = ctx.call('getContent',
-                            search_key,
-                            cookie_arr, user_agent, _nano_fp, P, F, scrollTop_timestamp)
+                            search_key,  # 查询关键词
+                            P,  # 时间戳
+                            F,  # 时间戳
+                            scrollTop_timestamp,  # 向下滚动
+                            user_agent,  # UA
+                            cookie_dict['_nano_fp'])
     return anti_content
 
 

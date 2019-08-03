@@ -1,7 +1,6 @@
-const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scrollTop_timestamp) => {
+const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nano_fp) => {
     var href_data = `http://mobile.yangkeduo.com/search_result.html?search_key=${encodeURI(search_key)}`;
-    var fuck_cookies = cookie_arr;
-    console.log(href_data, fuck_cookies, user_agent);
+    console.log(href_data, user_agent);
     // chrome 调试笔记
     // 再Sources面板下按esc可以显示Console面板
     //要在控制台中打印完整Array: console.log(JSON.stringify(uniqueNames))
@@ -1739,21 +1738,15 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
                 i
         };
 
-        var p = v("0x0", "Tadf") //"target"
-            , b = "id"
-            , m = v("0x1", "LLNV")     // "now"
+        var m = v("0x1", "LLNV")     // "now"
             , C = v("0x2", "FL7b")     // "substring"
             , D = v("0x3", "bYZs")     // "pow"
             , O = v("0x4", "tUJV")     // "random"
-            , k = v("0x5", "mneL")     // "serverTime"
-            , y = v("0x6", "$r!N")     // "addEventListener"
-            , K = v("0x7", "EAU$")     // "document"
             , z = v("0x8", "[lxN")     // "availHeight"
             , A = v("0x9", "Qi9n")     // "availWidth"
             , M = v("0xa", "$9hj")     // "screen"
             , B = v("0xb", "2sLW")     // "port"
             , L = v("0xc", "Z)hI")     // "href"
-            , j = v("0xd", "uTFP")     // "location"
             , S = v("0xe", "([hh")     // "timestamp"
             , T = v("0xf", "lY!1")     // "clientY"
             , H = v("0x10", "([hh")    // "clientX"
@@ -1765,11 +1758,6 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
             , Q = v("0x16", "kniu")    // "init"
             , U = v("0x17", "#drv")    // "data"
             , E = 0
-            // , P = (new Date()).valueOf().toString()
-            // , F = Date.now().valueOf() - parseInt(Math.random() * 50000)
-            , I = 5
-            , W = function () {
-            }
             , Z = void 0  // Window
             , J = void 0  // Navigator
             , G = Date  // Date()
@@ -1782,103 +1770,8 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
                 fuck_l[n[v("0x82", "*DN5")]](t[Y])[q](t)
         }
 
-        function et(t, n) {
-            var r = {};
-            if (r[v("0x83", "3ZGO")] = function (t, n) {
-                return t < n
-            }
-                ,
-                r[v("0x84", "mneL")] = function (t, n) {
-                    return t - n
-                }
-                ,
-                r[v("0x85", "oRuw")](t[U][Y], I)) {
-                var e = n || Z[v("0x86", "VYg*")]
-                    , i = e[p][b] || ""
-                    , a = {};
-                if (a[V] = i,
-                    a[S] = r[v("0x87", "$9hj")](G[m](), E),
-                    $) {
-                    var o = e[v("0x88", "@!cA")];
-                    o && o[Y] && (a[H] = o[0][H],
-                        a[T] = o[0][T])
-                } else
-                    a[H] = e[H],
-                        a[T] = e[T];
-                t[U][R](a)
-            }
-        }
-
-        var it = {};
-        it['data'] = [];
-        it["init"] = function () {
-            this[U] = []
-        }
-            ,
-            it["handleEvent"] = function (t) {
-                if (function (t, n) {
-                    return t < I
-                }(this[U][Y])) {
-                    var n = t || Z.event
-                        , r = n[p][b] || ""
-                        , e = {};
-                    e[V] = r,
-                        e[H] = n[H],
-                        e[T] = n[T],
-                        e[S] = function (t, n) {
-                            return t - n
-                        }(G[m](), E),
-                        this[U][R](e)
-                }
-            }
-            ,
-            it["pack"] = function () {
-                var t = [][q](fuck_l.es("db"));
-                return this[U][N](function (n) {
-                    t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
-                }),
-                    rt(t)
-            }
-        ;
-        var at = {};
-        at["data"] = [];
-        at[v("0x8c", "$Dwv")] = function () {
-            this[U] = []
-        }
-            ,
-            at[v("0x8d", "V[H)")] = function (t) {
-                et(this, t)
-            }
-            ,
-            at[v("0x8e", "LLNV")] = function () {
-                var t = [][q](fuck_l.es("wt"));
-                return this[U][N](function (n) {
-                    t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
-                }),
-                    rt(t)
-            }
-        ;
-        var ot = {};
-        ot['data'] = [];
-        ot[v("0x8f", "8@%Y")] = function () {
-            this[U] = []
-        }
-            ,
-            ot[v("0x90", "4c^x")] = function (t) {
-                et(this, t)
-            }
-            ,
-            ot[v("0x91", "#drv")] = function () {
-                var t = [][q](l.es("tw"));
-                return this[U][N](function (n) {
-                    t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
-                }),
-                    rt(t)
-            }
-        ;
-
         var st = {};
-        // st['data'] = [];
+        st['data'] = [];
         st["init"] = function () {
             this[U] = []
         };
@@ -1891,32 +1784,68 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
                 rt(t)
         };
 
-        var ut = {};
-        ut[v("0x95", "V[H)")] = function () {
+        var ot = {};
+        ot['data'] = [];
+        ot["init"] = function () {
+            this[U] = []
+        };
+        ot["pack"] = function () {
+            var t = [][q](l.es("tw"));
+            return this[U][N](function (n) {
+                t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
+            }),
+                rt(t)
+        };
+
+        var at = {};
+        at["data"] = [];
+        at["init"] = function () {
+            this[U] = []
+        };
+        at["pack"] = function () {
+            var t = [][q](fuck_l.es("wt"));
+            return this[U][N](function (n) {
+                t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
+            }),
+                rt(t)
+        };
+
+        var it = {};
+        it['data'] = [];
+        it["init"] = function () {
+            this[U] = []
+        };
+        it["pack"] = function () {
+            var t = [][q](fuck_l.es("db"));
+            return this[U][N](function (n) {
+                t = t[q](l.en(n[H]), l.en(n[T]), l.es(n[V]), l.en(n[S]))
+            }),
+                rt(t)
+        };
+
+        var ut = {};  // 每次翻页, 初始化一次
+        ut["init"] = function () {
             this[U] = {},
                 this[U][L] = href_data,
                 this[U][B] = ""
-        }
-            ,
-            ut[v("0x96", "oRuw")] = function () {
-                return this[Q](),
-                    rt([][q](fuck_l.es("kf"), fuck_l.es(this[U][L]), fuck_l.es(this[U][B])))
-            }
-        ;
+        };
+        ut["pack"] = function () {
+            return this[Q](),
+                rt([][q](fuck_l.es("kf"), fuck_l.es(this[U][L]), fuck_l.es(this[U][B])))
+        };
+
         var ct = {};
         ct['data'] = {availHeight: 768, availWidth: 1366};
-        ct[v("0x97", "[PtG")] = function () {
+        ct["init"] = function () {
             this[U] = {},
                 this[U][A] = Z[M][A],
                 this[U][z] = Z[M][z]
-        }
-            ,
-            ct[v("0x98", "k24J")] = function () {
-                return rt([][q](fuck_l.es("lh"), fuck_l.en(this[U][z]), fuck_l.en(this[U][A])))
-            }
-        ;
+        };
+        ct["pack"] = function () {
+            return rt([][q](fuck_l.es("lh"), fuck_l.en(this[U][z]), fuck_l.en(this[U][A])))
+        };
+
         var ft = {};
-        // X = Math;
         ft["init"] = function () {
             var t = function (t, n) {
                 return t(n)
@@ -1936,13 +1865,12 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
             }(X[O](), function (t, n) { // X[O] 为 Math.random
                 return t + n
             }(X[D](2, 30), 1))), 10)) + "-" + P  // X[D]为Math.pow
-        }
-            ,
-            ft["pack"] = function () {
-                return this[Q](),  // 执行初始化
-                    rt([][q](fuck_l.es("ie"), fuck_l.es(this[U])))
-            }
-        ;
+        };
+        ft["pack"] = function () {
+            return this[Q](),  // 执行初始化
+                rt([][q](fuck_l.es("ie"), fuck_l.es(this[U])))
+        };
+
         var ht = {};
         ht['data'] = 2048;
         ht["init"] = function () {  // 不执行init函数, 直接设置值
@@ -2037,12 +1965,11 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
                     r += t[v("0x7f", "@!cA")](n[e], e);
                 return r
             }()
-        }
-            ,
-            ht[v("0x9c", "3[uW")] = function () {
-                return rt([][q](fuck_l.es("hb"), fuck_l.en(this[U])))
-            }
-        ;
+        };
+        ht["pack"] = function () {
+            return rt([][q](fuck_l.es("hb"), fuck_l.en(this[U])))
+        };
+
         var wt = {};
         wt["init"] = (function () {  // 把href_data带入a中进行转换
             var fuck_e = {};  // 有wordsToBytes, bytesToWords函数
@@ -2196,352 +2123,76 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
             }
 
             this[U] = a(href_data ? href_data : "")
-        })()
-            ,
-            wt[v("0x9e", "4e!e")] = function () {
-                return rt([][q](fuck_l.es("ml"), fuck_l.es(this[U])))
-            }
-        ;
+        })();
+        wt["pack"] = function () {
+            return rt([][q](fuck_l.es("ml"), fuck_l.es(this[U])))
+        };
+
         var lt = {};
         lt["data"] = "n";
-        lt[v("0x9f", "vLQ#")] = function () {
+        lt["init"] = function () {
             var t = v("0xa0", "^Xgu"); // t = "DeviceOrientationEvent"
             this[U] = Z[t] ? "y" : "n"
-        }
-            ,
-            lt[v("0xa1", "$Sz1")] = function () {
-                return rt([][q](fuck_l.es("qc"), fuck_l.es(this[U])))
-            }
-        ;
+        };
+        lt["pack"] = function () {
+            return rt([][q](fuck_l.es("qc"), fuck_l.es(this[U])))
+        };
+
         var dt = {};
         dt["data"] = "n";
-        dt[v("0xa2", "[lxN")] = function () {
+        dt["init"] = function () {
             var t = v("0xa3", "Dw*Y");  // t = "DeviceMotionEvent
             this[U] = Z[t] ? "y" : "n"
-        }
-            ,
-            dt[v("0xa4", ")bxT")] = function () {
-                return rt([][q](fuck_l.es("za"), fuck_l.es(this[U])))
-            }
-        ;
+        };
+        dt["pack"] = function () {
+            return rt([][q](fuck_l.es("za"), fuck_l.es(this[U])))
+        };
+
         var _t = {};
         // G = Date;
-        _t[v("0xa5", "!9C8")] = function () {
+        _t["init"] = function () {
             this[U] = G[m]() - F // G[m]()为Date.now(), F应该是打开第一页的时间
-        }
-            ,
-            _t[v("0x9c", "3[uW")] = function () {
-                return this[Q](),
-                    rt([][q](fuck_l.es("xq"), fuck_l.en(this[U])))
-            }
-        ;
+        };
+        _t["pack"] = function () {
+            return this[Q](),
+                rt([][q](fuck_l.es("xq"), fuck_l.en(this[U])))
+        };
+
         var xt = {};
         xt["data"] = user_agent; // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-        xt[v("0xa6", "%ilK")] = function () {
+        xt["init"] = function () {
             var t = v("0xa7", "$r!N");  // "userAgent"
             this[U] = J[t]
-        }
-            ,
-            xt[v("0xa8", "FL7b")] = function () {
-                return rt([][q](fuck_l.es("te"), fuck_l.es(this[U])))
-            }
-        ;
+        };
+        xt["pack"] = function () {
+            return rt([][q](fuck_l.es("te"), fuck_l.es(this[U])))
+        };
+
         var gt = {};
-
-        function fuck_nano_fp() {
-            // var n, e, i = "function" == typeof _ && "symbol" == g(w) ? function (t) {
-            //         return g(t)
-            //     }
-            //     : function (t) {
-            //         return t && "function" == typeof _ && t.constructor === _ && t !== _.prototype ? "symbol" : g(t)
-            //     }
-            //     , a = r(4), o = r(17), s = r(18),
-            var n, e;
-            var u = ["QzwKMQ4=", "w6fCisOpFyEo", "w7LDkcKMw4F9", "wqLDlVkyLG7Cvg==", "w4nDvHUmUg==", "CGTDnk7DoMO0Eg==", "woBEw60FeA==", "w684w4vDhWM=", "w7HDv2zDocKF", "w7LDmcK9KTQ=", "LcOPWsKmwro=", "w7A+FDZH", "w4PCvSM=", "KMOiaA==", "RMOiwq3CjsOr", "wqLDhEI=", "WcOOdlx8", "w7HDs8K9w55Bw4cs", "JMK5IcOPRcOawrjDgMKq", "a8KKw5bCk8OdcxjCjW/DlcO1w7Y=", "LcOyw5LDiyES", "ecOAwp7Cg8O1w6o3w6k=", "wqzCt8K5wr8Zw5M=", "wo0HwpQSw6bDosKTYsO2", "PMOiaMKrez3CkCBs", "DMKLZkFBw50Lwqlvw7k=", "wq/Cq8K9w5BHw5tiXA==", "w4vDvnkvSMK8w4t7w4U=", "w6bDi8KLwq3ClcKJR8KkZlQ=", "wrvDkG9HY8OVFS/CqQQ=", "wph9w6w=", "wpsWR8KTwog=", "wqhfwobDr8KJ", "wqDCkklGTg==", "w7LDuX/DsMKY", "flXCtwhS", "w63DlcKvwoPCkQ==", "UBYOOB56", "w6bDvMK1w59h", "wpMvw5M8Jg==", "UzfCosOewog=", "L0DDtV7DjA==", "fmk/w7jCuQ==", "YMKzw6/DmQLDrw==", "w7/CszLDi8O+I8OuHMKGSQ==", "w6gZw6vDvUY=", "wrkewp4Nw6I=", "GCJdwqvClw==", "T8OzRR/ClXPChw==", "JXwNwo3Cjg==", "YBYIID8=", "fsOHwpzChMOZw7s=", "wpQsw68vMwrDng8jw5UK", "w6/CtzrDmsOY", "wojDrGY4Pg==", "wpYMwoUSw40=", "wpfCj2ZfUg==", "IcOmcsKHSzTCiw==", "RcOIV3Z9"];
-            n = u,
-                e = 136,
-                function (t) {
-                    for (; --t;)
-                        n.push(n.shift())
-                }(++e);
-            var c = function t(n, r) {
-                var e, i = u[n -= 0];
-                void 0 === t.KnuQDT && ((e = function () {
-                    var t;
-                    try {
-                        t = Function('return (function() {}.constructor("return this")( ));')()
-                    } catch (n) {
-                        t = window
-                    }
-                    return t
-                }()).atob || (e.atob = function (t) {
-                        for (var n, r, e = String(t).replace(/=+$/, ""), i = 0, a = 0, o = ""; r = e.charAt(a++); ~r && (n = i % 4 ? 64 * n + r : r,
-                        i++ % 4) ? o += String.fromCharCode(255 & n >> (-2 * i & 6)) : 0)
-                            r = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(r);
-                        return o
-                    }
-                ),
-                    t.fyxzDe = function (t, n) {
-                        for (var r, e = [], i = 0, a = "", o = "", s = 0, u = (t = atob(t)).length; s < u; s++)
-                            o += "%" + ("00" + t.charCodeAt(s).toString(16)).slice(-2);
-                        t = decodeURIComponent(o);
-                        for (var c = 0; c < 256; c++)
-                            e[c] = c;
-                        for (c = 0; c < 256; c++)
-                            i = (i + e[c] + n.charCodeAt(c % n.length)) % 256,
-                                r = e[c],
-                                e[c] = e[i],
-                                e[i] = r;
-                        c = 0,
-                            i = 0;
-                        for (var f = 0; f < t.length; f++)
-                            i = (i + e[c = (c + 1) % 256]) % 256,
-                                r = e[c],
-                                e[c] = e[i],
-                                e[i] = r,
-                                a += String.fromCharCode(t.charCodeAt(f) ^ e[(e[c] + e[i]) % 256]);
-                        return a
-                    }
-                    ,
-                    t.aBwsIj = {},
-                    t.KnuQDT = !0);
-                var a = t.aBwsIj[n];
-                return void 0 === a ? (void 0 === t.oBOLyG && (t.oBOLyG = !0),
-                    i = t.fyxzDe(i, r),
-                    t.aBwsIj[n] = i) : i = a,
-                    i
-            }
-                , f = c("0x0", "0Q^3")
-                , h = c("0x1", "&zxH")
-                , l = c("0x2", "kc36")
-                , d = c("0x3", "FsN1")
-                , x = c("0x4", "wt6v")
-                , v = null;
-            // , v = window;  // 原本是这条语句, 但是v用不到
-            // ("undefined" == typeof window ? "undefined" : i(window)) !== c("0x5", "kWt7") && (v = window);
-            var p = {};
-
-            function b() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Date[c("0xc", "HxY!")]()
-                    , n = {};
-                n[c("0xd", "E7dI")] = function (t, n) {
-                    return t(n)
-                }
-                    ,
-                    n[c("0xe", "r[(a")] = function (t) {
-                        return t()
-                    }
-                    ,
-                    n[c("0xf", "kkhd")] = function (t, n) {
-                        return t % n
-                    }
-                    ,
-                    n[c("0x10", "l*OF")] = function (t, n, r, e) {
-                        return t(n, r, e)
-                    }
-                    ,
-                    n[c("0x11", "zgAZ")] = function (t, n) {
-                        return t(n)
-                    }
-                    ,
-                    n[c("0x12", "gPk6")] = c("0x13", "jhb9");
-
-                function o(t) {
-                    t = t || 21;
-                    for (var n = ""; 0 < t--;)
-                        n += "_~varfunctio0125634789bdegjhklmpqswxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[64 * Math.random() | 0];
-                    return n
-                }
-
-                function s(t, n, r) {
-                    if ("string" != typeof t)
-                        throw new Error("The string parameter must be a string.");
-                    if (t.length < 1)
-                        throw new Error("The string parameter must be 1 character or longer.");
-                    if ("number" != typeof n)
-                        throw new Error("The length parameter must be a number.");
-                    if ("string" != typeof r && r)
-                        throw new Error("The character parameter must be a string.");
-                    var e = -1;
-                    for (n -= t.length,
-                         r || 0 === r || (r = " "); ++e < n;)
-                        t += r;
-                    return t
-                }
-
-                var r = n[c("0x14", "#BDR")](String, t)[c("0x15", "mUZ7")](0, 10)
-                    , e = n[c("0x16", "!LcL")](o)
-                    ,
-                    i = n[c("0x17", "OPo!")]((r + "_" + e)[c("0x18", "mpB0")]("")[c("0x19", "*%RS")](function (t, n) {
-                        return t + n[c("0x1a", "[)ww")](0)
-                    }, 0), 1e3)
-                    , u = n[c("0x1b", "BmuK")](s, n[c("0x1c", "kWt7")](String, i), 3, "0");
-                return fuck_l[n[c("0x1d", "ogP5")]]("" + r + u)[c("0x1e", "v*sR")](/=/g, "") + "_" + e
-            }
-
-            function m(t) {
-                var n = {};
-                return n[c("0x1f", "zrO^")] = function (t, n) {
-                    return t + n
-                }
-                    ,
-                    n[c("0x20", "jhb9")](t[c("0x21", "FsN1")](0)[c("0x22", "mUZ7")](), t[c("0x23", "[)ww")](1))
-            }
-
-
-            // 如果cookie里没有_nano_fp的值, 则设置, 设置什么, 我不知道. 用不到
-            p["setCookie"] = function (t, n) {
-                var r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 9999
-                    , e = {
-                    hNolq: function (t, n) {
-                        return t + n
-                    },
-                    HSBcF: function (t, n) {
-                        return t * n
-                    },
-                    QsJzw: function (t, n) {
-                        return t * n
-                    },
-                    irUnm: c("0x7", "3hFI"),
-                    ZRUhv: function (t, n) {
-                        return t + n
-                    },
-                    KcgwS: function (t, n) {
-                        return t + n
-                    },
-                    NcxmC: function (t, n) {
-                        return t || n
-                    },
-                    HWavj: c("0x8", "#BDR")
-                };
-                t = e.hNolq("_", t);
-                var i = "";
-                if (r) {
-                    var a = new Date;
-                    a.setTime(e.hNolq(a.getTime(), e.HSBcF(e.HSBcF(e.QsJzw(e.QsJzw(r, 24), 60), 60), 1e3))),
-                        i = e.hNolq(e.irUnm, a.toUTCString())
-                }
-                v[d][l] = e.hNolq(e.ZRUhv(e.KcgwS(e.KcgwS(t, "="), e.NcxmC(n, "")), i), e.HWavj)
-            }
-                ,
-                // 获取cookie里_nano_fp的值
-                p["getCookie"] = function (t) {
-                    for (var n = function (t, n) {
-                        return t + n
-                    }, r = function (t, n) {
-                        return t < n
-                    }, e = function (t, n) {
-                        return t === n
-                    }, i = n(t = n("_", t), "="), a = fuck_cookies, o = 0; r(o, a[x]); o++) {
-                        for (var s = a[o]; e(s.charAt(0), " ");)
-                            s = s[f](1, s[x]);
-                        if (e(s.indexOf(i), 0))
-                            return s[f](i[x], s[x])
-                    }
-                    return null
-                }
-                ,
-                // 如果 window['localStorage'] 里没有_nano_fp的值, 则设置, 设置什么, 我不知道. 用不到
-                p["setStorage"] = function (t, n) {
-                    t = "_" + t,
-                        v[h].setItem(t, n)
-                }
-                ,
-                // 获取 window['localStorage'] 里 _nano_fp 的值
-                // The read-only localStorage property allows you to access a Storage object for the Document's origin;
-                // the stored data is saved across browser sessions. localStorage is similar to sessionStorage,
-                // except that while data stored in localStorage has no expiration time, data stored in
-                // sessionStorage gets cleared when the page session ends — that is, when the page is closed.
-                p[c("0xb", "VlH&")] = function (t) {
-                    return 'Xpdjn0P8n5m8X5X8n9_zFk35EN_zw0RQJSWSPRr4';
-                    // return t = "_" + t,
-                    //     v[h].getItem(t)
-                };
-            var t = {};
-            t[c("0x3a", "#BDR")] = function () {
-                var t = {};
-                t[c("0x24", "!jRO")] = function (t, n) {
-                    return t(n)
-                }
-                    ,
-                    t[c("0x25", "kWt7")] = function (t, n) {
-                        return t(n)
-                    }
-                    ,
-                    t[c("0x26", "kkhd")] = c("0x27", "6axu"),
-                    t[c("0x28", "3hFI")] = function (t) {
-                        return t()
-                    }
-                    ,
-                    t[c("0x29", "jhb9")] = c("0x2a", "7CAL"),
-                    t[c("0x2b", "#BDR")] = c("0x2c", "!jRO"),
-                    t[c("0x2d", "&8PU")] = c("0x2e", "OPo!");
-                var n = t[c("0x2f", "HxY!")]
-                    , r = {}
-                    , e = t[c("0x30", "BmuK")](b);
-                return [t[c("0x31", "l*OF")], t[c("0x32", "jFJ8")]][t[c("0x33", "Ayw(")]](function (i) {
-                    try {
-                        var a = c("0x34", "AVSJ") + i + c("0x35", "[)ww");
-                        r[a] = p[c("0x36", "6axu") + t[c("0x37", "FsN1")](m, i)](n);  // p['getCookie']('nano_fp')
-                        r[a] || (p[c("0x38", "!jRO") + t[c("0x39", "3hFI")](m, i)](n, e),
-                            r[a] = e)
-                    } catch (t) {
-                        console.log(t)
-                    }
-                }),
-                    r
-            }
-            return t[c("0x3a", "#BDR")]();
-        }
-
-        //{nano_cookie_fp: "Xpdjn0mqlpdYnqdynT_d6emNmFhxcEOldPDixU_L",
-        // nano_storage_fp: "Xpdjn0P8n5m8X5X8n9_zFk35EN_zw0RQJSWSPRr4"}
-        gt['data'] = fuck_nano_fp();  // 貌似可以直接给值, 不需要调用
-        gt[v("0xa9", "#drv")] = function () {
+        gt['data'] = {
+            nano_cookie_fp: _nano_fp,  // 是cookie里的_nano_fp的值
+            nano_storage_fp: _nano_fp  // 是localStorage里的_nano_fp的值
+        };
+        gt["init"] = function () {
             this[U] = {};
-        },
-            gt[v("0xaa", "8@%Y")] = function () {
-                var t = this
-                    , n = v("0xab", "$9hj")
-                    , r = v("0xac", "^Xgu")
-                    , e = []
-                    , i = {};
-                return i[n] = "ys",
-                    i[r] = "ut",
-                    Object.keys(this[U])[N](function (n) {
-                        var r = [][q](fuck_l.es(i[n]), fuck_l.es(t[U][n]));
-                        e[R](function (t, n) {
-                            return t(n)
-                        }(rt, r))
-                    }),
-                    e
-            };
+        };
+        gt["pack"] = function () {
+            var t = this
+                , n = v("0xab", "$9hj")
+                , r = v("0xac", "^Xgu")
+                , e = []
+                , i = {};
+            return i[n] = "ys",
+                i[r] = "ut",
+                Object.keys(this[U])[N](function (n) {
+                    var r = [][q](fuck_l.es(i[n]), fuck_l.es(t[U][n]));
+                    e[R](function (t, n) {
+                        return t(n)
+                    }(rt, r))
+                }),
+                e
+        };
 
-        // 源程序在这里执行以下几个对象的初始化
-        function vt() {
-            [ct, ht, wt, lt, dt, xt, gt, st, at, ot, it][N](function (t) {
-                t[Q]()
-            })
-        }
-
-        // 用于 addEventListener
-        function pt() {
-            var t = {};
-            t[v("0xad", "c^rz")] = v("0xae", "dxe$"),
-                t[v("0xaf", "lY!1")] = v("0xb0", "!9C8"),
-                t[v("0xb1", "LLNV")] = v("0xb2", ")bxT"),
-                t[v("0xb3", "!9C8")] = v("0xb4", "$9hj"),
-                Z[K][y](t[v("0xb5", ")bxT")], it, !0),  // it添加 click 事件
-                $ ? Z[K][y](t[v("0xb6", "$r!N")], ot, !0) :  // ot添加 touchstart 事件, $为false 不执行
-                    (Z[K][y](t[v("0xb7", "ov@(")], at, !0), //at添加 mousedown 事件
-                    Z[K][y](t[v("0xb8", "oRuw")], st, !0))  // st添加 scroll 事件
-        }
-
-        function bt() {
-            [st, at, ot, it][N](function (t) {
-                t[U] = (t[U] || [])[v("0xb9", "^Xgu")](-1)
-            })
-        }
 
         function mt() {
             var t = {};
@@ -2672,64 +2323,6 @@ const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scr
             return results;
         }
 
-        function Dt() {
-            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}
-                , n = {};
-            n["FKcRF"] = function (t, n) {
-                return t !== n
-            }
-                ,
-                n["FZehf"] = "undefined",
-                n["bCfPu"] = function (t) {
-                    return t()  // 这里执行初始化
-                }
-                ,
-            n[v("0xfa", "kniu")]("undefined" == typeof window ? "undefined" : i(window), n[v("0xfb", "4c^x")]) && (this[v("0xfc", "lY!1")](t[k] || 879609302220),
-                E = G[m](),
-                n[v("0xfd", "4e!e")](vt),
-                n[v("0xfe", "#drv")](pt))
-        }
-
-
-        // Dt["prototype"]["updateServerTime"] = function (t) {
-        //     F = G[m](),
-        //         P = t
-        // }
-        //     ,
-        //     Dt["prototype"]["init"] = W,  // W为 function() {}
-        //     Dt["prototype"]["clearCache"] = W,
-        //     Dt["prototype"]["messagePack"] = function () {
-        //         var t = {};
-        //         return t[v("0x106", "VYg*")] = function (t) {
-        //             return t()
-        //         }
-        //             ,
-        //             t[v("0x107", "CSRW")](Ct)
-        //     }
-        //     ,
-        //     Dt["prototype"]["messagePackSync"] = function () {
-        //         var t = {};
-        //         return t[v("0x10a", "Tadf")] = function (t, n) {
-        //             return t(n)
-        //         }
-        //             ,
-        //             t[v("0x10b", "oRuw")] = function (t) {
-        //                 return t()
-        //             }
-        //             ,
-        //             new s(function (n) {
-        //                     t[v("0x10c", "ewXa")](n, t[v("0x10d", "V[H)")](Ct))
-        //                 }
-        //             )
-        //     }
-        // ;
-        // var Ot = new Dt;
-        // t[v("0x10e", "2sLW")] = function () {
-        //     var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-        //     return t[k] && Ot[v("0x10f", "8@%Y")](t[k]),
-        //         Ot
-        // }
-        ;
         return Ct();
     };
     return start()

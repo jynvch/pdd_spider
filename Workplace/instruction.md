@@ -1,22 +1,8 @@
 # 拼多多js解密
-
-const getContent = (search_key, cookie_arr, user_agent, _nano_fp, P, F, next_scrollTop_timestamp) => {
+const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nano_fp) => {
 
 ### search_key
 搜索关键词. e.g. '月饼'
-
-### cookie_arr
-传入格式: 
-[" _nano_fp=Xpdjn0mqlpdYnqdynT_d6emNmFhxcEOldPDixU_L"]
-只需要传入cookie里的_nano_fp即可, 注意_nano_fp前有个空格
-
-### user_agent
-"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-传入请求头里的user_agent即可
-
-### _nano_fp
-"Xpdjn0mqlpdYnqdynT_d6emNmFhxcEOldPDixU_L"
-传入cookie里_nano_fp的值
 
 ### P
 1564808831636
@@ -44,6 +30,17 @@ def yield_scrollTop_timestamp():
  {'scrollTop': 100, 'timestamp': int(time.time() * 1000) - E}]
  
 以后每次请求, 数组第一个值为上一次的最后一个值, 第二个值的scrollTop加3000, timestamp用当前时间戳-E即可
+
+
+### user_agent
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+传入请求头里的user_agent即可
+
+
+### _nano_fp
+"Xpdjn0mqlpdYnqdynT_d6emNmFhxcEOldPDixU_L"
+传入cookie里_nano_fp的值
+
 
 
     
