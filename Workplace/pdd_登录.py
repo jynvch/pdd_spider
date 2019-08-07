@@ -39,7 +39,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
 }
 
-P = int(time.time() * 1000)
+P = int(time.time() * 1000) - 20 * 1000
 E = P + 10 * 1000
 F = P + 20 * 1000
 
@@ -132,7 +132,7 @@ def query(key):
 
 
 if __name__ == '__main__':
-    search_key = "月饼"
+    search_key = "饼干"
     query(search_key)
 
     # with open('get_anticontent.js', encoding='utf-8') as f:

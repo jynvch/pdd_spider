@@ -1,6 +1,7 @@
 const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nano_fp) => {
     var href_data = `http://mobile.yangkeduo.com/search_result.html?search_key=${encodeURI(search_key)}`;
-    console.log(href_data, user_agent);
+    console.log(href_data);
+    console.log(user_agent);
     // chrome 调试笔记
     // 再Sources面板下按esc可以显示Console面板
     //要在控制台中打印完整Array: console.log(JSON.stringify(uniqueNames))
@@ -1971,7 +1972,7 @@ const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nan
         };
 
         var wt = {};
-        wt["init"] = (function () {  // 把href_data带入a中进行转换
+        wt['data'] = (function () {  // 把href_data带入a中进行转换
             var fuck_e = {};  // 有wordsToBytes, bytesToWords函数
             (function h(t, n) {
                 var r, e;
@@ -2122,7 +2123,7 @@ const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nan
                 return n && n.asBytes ? r : n && n.asString ? o.bytesToString(r) : fuck_e.bytesToHex(r)
             }
 
-            this[U] = a(href_data ? href_data : "")
+            return a(href_data ? href_data : "")
         })();
         wt["pack"] = function () {
             return rt([][q](fuck_l.es("ml"), fuck_l.es(this[U])))
@@ -2296,7 +2297,7 @@ const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nan
                 }
             }(gt[v("0xdb", "Tadf")]())));
 
-            console.log(r);
+            // console.log(r);
 
             function bt() {
                 [st, at, ot, it][N](function (t) {
@@ -2329,13 +2330,15 @@ const getContent = (search_key, P, F, next_scrollTop_timestamp, user_agent, _nan
 };
 
 // var search_key = "月饼";
-// var cookie_arr = [
-//     ' _nano_fp=Xpdjn0EyXqXoXqTaXC_HwB6GnjVgiFCzCjtx816R',
-//     ' ua=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F75.0.3770.142%20Safari%2F537.36',
-//     ' webp=1',
-//     'api_uid=rBQhQl1CvMCbS1A1FLuVAg=='];
+// var P = Date.now() - 20 * 1000;
+// var E = P + 10 * 1000;
+// var F = P + 20 * 1000;
+// var next_scrollTop_timestamp = [
+//     {'scrollTop': 0, 'timestamp': Date.now() - E},
+//     {'scrollTop': 100, 'timestamp': Date.now() - E},
+// ];
 // var user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36';
 // var _nano_fp = 'Xpdjn0EjXpmJn5P8Xo_6XhB32PSdAzK83ek4Kp7e';
 //
-// getContent(search_key, cookie_arr, user_agent)
-// document.write(getContent(search_key, cookie_arr, user_agent));
+//
+// document.write(getContent(search_key, P, F, next_scrollTop_timestamp, user_agent, _nano_fp));
